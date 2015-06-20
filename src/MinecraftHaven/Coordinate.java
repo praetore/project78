@@ -3,7 +3,7 @@ package MinecraftHaven;
 /**
  * Created by Peter on 19-5-2015.
  */
-public class Object {
+public class Coordinate {
     private Double lat;
     private Double lon;
 
@@ -12,7 +12,7 @@ public class Object {
 
     private int type;
 
-    public Object(int type, Double lat, Double lon, int x, int z){
+    public Coordinate(int type, Double lat, Double lon, int x, int z){
         this.type = type;
         this.lat = lat;
         this.lon = lon;

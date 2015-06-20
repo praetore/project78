@@ -11,7 +11,7 @@ import java.util.regex.Pattern;
  * Created by Peter on 19-5-2015.
  */
 public class DataReader {
-    ArrayList<Object> objects = new ArrayList<Object>();
+    ArrayList<Coordinate> coordinates = new ArrayList<Coordinate>();
     File file = new File("Resources/data.csv");
 
     BufferedReader reader = null;
