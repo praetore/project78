@@ -1,11 +1,12 @@
-package handler.exporter;
+package mcconverter.exporter;
 
-import handler.coordinates.Coordinate;
-import handler.coordinates.MapCoordinate;
+import mcconverter.coordinates.Coordinate;
+import mcconverter.coordinates.MapCoordinate;
 
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Matcher;
@@ -14,13 +15,13 @@ import java.util.regex.Pattern;
 /**
  * Created by Peter on 19-5-2015.
  */
-public class MapCoordinatesExport extends Exporter implements IExporter {
-    public MapCoordinatesExport(String exportPath, String importPath) {
+public class MapCoordinatesExport extends BaseExporter implements Exporter {
+    public MapCoordinatesExport(Path exportPath, String importPath) {
         super(exportPath, importPath);
     }
 
     public List<Coordinate> readData() {
-        List<Coordinate> coordinates = new ArrayList<Coordinate>();
+        List<Coordinate> coordinates = new ArrayList<>();
         String nameRegex = "(.+);.+;.+;.+;(.+);(.+)";
         Pattern pattern = Pattern.compile(nameRegex);
         try {

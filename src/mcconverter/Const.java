@@ -1,4 +1,7 @@
-package handler;
+package mcconverter;
+
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
 /**
  * Created by darryl on 20-6-15.
@@ -6,7 +9,7 @@ package handler;
 public interface Const {
     String MAP_COORDS_IMPORT_PATH = "/data.csv";
     String SILO_COORDS_IMPORT_PATH = "/silos.csv";
-    String EXPORT_PATH = "out.txt";
+    Path EXPORT_PATH = Paths.get("out", "out.txt");
 
     int IMAGE_WIDTH = 2556;
     int IMAGE_HEIGHT = 2048;

@@ -1,34 +1,32 @@
-package handler.exporter;
+package mcconverter.exporter;
 
-import handler.coordinates.Coordinate;
+import mcconverter.coordinates.Coordinate;
 
 import java.io.*;
+import java.nio.file.Path;
 import java.util.List;
 
 /**
  * Created by darryl on 20-6-15.
  */
-abstract class Exporter {
-    protected final String exportPath;
+abstract class BaseExporter {
+    protected final Path exportPath;
     protected final String importPath;
 
-    public Exporter(String exportPath, String importPath) {
+    public BaseExporter(Path exportPath, String importPath) {
         this.exportPath = exportPath;
         this.importPath = importPath;
     }
 
     public void exportData(List<Coordinate> coordinates) {
-        File output = new File(exportPath);
-        FileOutputStream fos;
+        File output = exportPath.toFile();
         try {
-            fos = new FileOutputStream(output);
+            FileOutputStream fos = new FileOutputStream(output);
             BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(fos));
             for (Coordinate coordinate : coordinates) {
                 bw.write(coordinate.toString());
                 bw.newLine();
             }
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
