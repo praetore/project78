@@ -1,4 +1,4 @@
-package MinecraftHaven;
+package exporter;
 
 /**
  * Created by Peter on 19-5-2015.
@@ -6,7 +6,6 @@ package MinecraftHaven;
 public class Coordinate {
     private Double lat;
     private Double lon;
-
     private int x;
     private int z;
 
@@ -38,5 +37,10 @@ public class Coordinate {
 
     public int getType() {
         return type;
+    }
+
+    @Override
+    public String toString() {
+        return type + "," + lat + "," + lon + "," + x + "," + z;
     }
 }
