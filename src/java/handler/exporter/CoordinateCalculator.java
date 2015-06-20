@@ -1,6 +1,6 @@
-package exporter;
+package handler.exporter;
 
-import static exporter.Const.*;
+import static handler.Const.*;
 
 /**
  * Created by Peter on 18-5-2015.
@@ -17,13 +17,15 @@ public class CoordinateCalculator {
 
     //Check if coordinates occur in map
     public boolean inRegion(Double x, Double z) {
-        boolean inRegion = false;
+        return xValid(x) && zValid(z);
+    }
 
-        if (x <= EAST && x >= WEST && z <= NORTH && z >= SOUTH) {
-            inRegion = true;
-        }
+    private boolean xValid(Double x) {
+        return x <= EAST && x >= WEST;
+    }
 
-        return inRegion;
+    public boolean zValid(Double z) {
+        return z <= NORTH && z >= SOUTH;
     }
 
     //Get minecraft X from Latitude
@@ -48,9 +50,5 @@ public class CoordinateCalculator {
         Double zResult = (zDiff / zDiffCor) * IMAGE_HEIGHT;
 
         return zResult.intValue();
-    }
-
-    public static void main(String[] args) {
-        new CoordinateCalculator();
     }
 }

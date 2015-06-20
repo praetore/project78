@@ -1,10 +1,11 @@
-package exporter;
+package handler;
 
 /**
  * Created by darryl on 20-6-15.
  */
 public interface Const {
-    String IMPORT_PATH = "/data.csv";
+    String MAP_COORDS_IMPORT_PATH = "/data.csv";
+    String SILO_COORDS_IMPORT_PATH = "/silos.csv";
     String EXPORT_PATH = "out.txt";
 
     int IMAGE_WIDTH = 2556;
