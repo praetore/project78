@@ -1,19 +1,15 @@
-package MinecraftHaven;
+package handler.coordinates;
 
 /**
  * Created by Peter on 19-5-2015.
  */
-public class Object {
-    private Double lat;
-    private Double lon;
+public abstract class Coordinate {
+    final protected Double lat;
+    final protected Double lon;
+    final protected int x;
+    final protected int z;
 
-    private int x;
-    private int z;
-
-    private int type;
-
-    public Object(int type, Double lat, Double lon, int x, int z){
-        this.type = type;
+    public Coordinate(Double lat, Double lon, int x, int z){
         this.lat = lat;
         this.lon = lon;
         this.x = x;
@@ -36,7 +32,4 @@ public class Object {
         return z;
     }
 
-    public int getType() {
-        return type;
-    }
 }
