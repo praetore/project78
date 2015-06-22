@@ -38,6 +38,7 @@ public class SiloCoordinatesExport extends BaseExporter implements Exporter {
                     int z = cal.getZfromCor(lng);
                     SiloCoordinate res = new SiloCoordinate(lat, lng, x, z, schematic);
                     coordinates.add(res);
+                    System.out.println(res);
                 }
             }
         } catch (Exception e) {

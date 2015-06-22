@@ -11,8 +11,8 @@ public interface Const {
     String SILO_COORDS_IMPORT_PATH = "/silos.csv";
     Path EXPORT_PATH = Paths.get("out", "out.txt");
 
-    int IMAGE_WIDTH = 2556;
-    int IMAGE_HEIGHT = 2048;
+    int IMAGE_WIDTH = 7680;
+    int IMAGE_HEIGHT = 6144;
 
     Double NORTH = 52.0123191;
     Double EAST = 4.27192867;
