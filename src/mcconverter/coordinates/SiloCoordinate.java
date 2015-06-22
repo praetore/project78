@@ -1,4 +1,4 @@
-package handler.coordinates;
+package mcconverter.coordinates;
 
 /**
  * Created by darryl on 20-6-15.

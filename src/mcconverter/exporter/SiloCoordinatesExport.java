@@ -1,25 +1,26 @@
-package handler.exporter;
+package mcconverter.exporter;
 
-import handler.coordinates.Coordinate;
-import handler.coordinates.SiloCoordinate;
+import mcconverter.coordinates.Coordinate;
+import mcconverter.coordinates.SiloCoordinate;
 
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 
 /**
  * Created by darryl on 20-6-15.
  */
-public class SiloCoordinatesExport extends Exporter implements IExporter {
-    public SiloCoordinatesExport(String exportPath, String importPath) {
+public class SiloCoordinatesExport extends BaseExporter implements Exporter {
+    public SiloCoordinatesExport(Path exportPath, String importPath) {
         super(exportPath, importPath);
     }
 
     @Override
     public List<Coordinate> readData() {
-        List<Coordinate> coordinates = new ArrayList<Coordinate>();
+        List<Coordinate> coordinates = new ArrayList<>();
         try {
             InputStream inputStream = this.getClass().getResourceAsStream(importPath);
             BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
@@ -36,7 +37,6 @@ public class SiloCoordinatesExport extends Exporter implements IExporter {
                     int x = cal.getXfromCor(lat);
                     int z = cal.getZfromCor(lng);
                     SiloCoordinate res = new SiloCoordinate(lat, lng, x, z, schematic);
-                    System.out.println(res);
                     coordinates.add(res);
                 }
             }

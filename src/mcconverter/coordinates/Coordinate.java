@@ -1,4 +1,4 @@
-package handler.coordinates;
+package mcconverter.coordinates;
 
 /**
  * Created by Peter on 19-5-2015.
@@ -9,7 +9,7 @@ public abstract class Coordinate {
     final protected int x;
     final protected int z;
 
-    public Coordinate(Double lat, Double lon, int x, int z){
+    public Coordinate(Double lat, Double lon, int x, int z) {
         this.lat = lat;
         this.lon = lon;
         this.x = x;
