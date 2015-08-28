@@ -7,9 +7,8 @@ import java.nio.file.Paths;
  * Created by darryl on 20-6-15.
  */
 public interface Const {
-    String MAP_COORDS_IMPORT_PATH = "/data.csv";
-    String SILO_COORDS_IMPORT_PATH = "/points2.csv";
-    Path EXPORT_PATH = Paths.get("out", "out.txt");
+    String SILO_COORDS_IMPORT_PATH = "/points.csv";
+    Path EXPORT_PATH = Paths.get("out", "points.csv");
 
     int IMAGE_WIDTH = 10230;
     int IMAGE_HEIGHT = 6448;
