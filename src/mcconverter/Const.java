@@ -8,11 +8,11 @@ import java.nio.file.Paths;
  */
 public interface Const {
     String MAP_COORDS_IMPORT_PATH = "/data.csv";
-    String SILO_COORDS_IMPORT_PATH = "/silos.csv";
+    String SILO_COORDS_IMPORT_PATH = "/points2.csv";
     Path EXPORT_PATH = Paths.get("out", "out.txt");
 
-    int IMAGE_WIDTH = 2556;
-    int IMAGE_HEIGHT = 2048;
+    int IMAGE_WIDTH = 10230;
+    int IMAGE_HEIGHT = 6448;
 
     Double NORTH = 52.0123191;
     Double EAST = 4.27192867;

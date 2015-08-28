@@ -13,8 +13,8 @@ import java.util.List;
 /**
  * Created by darryl on 20-6-15.
  */
-public class SiloCoordinatesExport extends BaseExporter implements Exporter {
-    public SiloCoordinatesExport(Path exportPath, String importPath) {
+public class PointsCoordinatesExport extends BaseExporter implements Exporter {
+    public PointsCoordinatesExport(Path exportPath, String importPath) {
         super(exportPath, importPath);
     }
 
@@ -29,14 +29,15 @@ public class SiloCoordinatesExport extends BaseExporter implements Exporter {
             while (reader.ready()) {
                 String text = reader.readLine();
                 String[] split = text.split(",");
-                Double lat = Double.parseDouble(split[1]);
-                Double lng = Double.parseDouble(split[2]);
-                String schematic = split[3];
+                Double lat = Double.parseDouble(split[0]);
+                Double lng = Double.parseDouble(split[1]);
+                String schematic = split[2];
+                String direction = split[3];
 
                 if (cal.inRegion(lat, lng)) {
                     int x = cal.getXfromCor(lat);
                     int z = cal.getZfromCor(lng);
-                    SiloCoordinate res = new SiloCoordinate(lat, lng, x, z, schematic);
+                    SiloCoordinate res = new SiloCoordinate(lat, lng, x, z, schematic, direction);
                     coordinates.add(res);
                 }
             }
