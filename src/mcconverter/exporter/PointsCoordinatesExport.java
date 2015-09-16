@@ -34,7 +34,7 @@ public class PointsCoordinatesExport extends BaseExporter implements Exporter {
                 String schematic = split[2];
                 String direction = split[3];
 
-                if (cal.inRegion(lat, lng)) {
+                if (cal.inRegion(lng, lat)) {
                     int x = cal.getXfromCor(lat);
                     int z = cal.getZfromCor(lng);
                     SiloCoordinate res = new SiloCoordinate(lat, lng, x, z, schematic, direction);
